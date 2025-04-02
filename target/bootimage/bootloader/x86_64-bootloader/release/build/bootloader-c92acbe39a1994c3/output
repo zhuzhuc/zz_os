@@ -1,0 +1,7 @@
+cargo:rerun-if-changed=/home/zzc/Desktop/zz_os/Cargo.toml
+cargo:rustc-link-search=native=/home/zzc/Desktop/zz_os/target/bootimage/bootloader/x86_64-bootloader/release/build/bootloader-c92acbe39a1994c3/out
+cargo:rustc-link-lib=static=kernel_bin-zz_os
+cargo:rerun-if-env-changed=KERNEL
+cargo:rerun-if-env-changed=KERNEL_MANIFEST
+cargo:rerun-if-changed=/home/zzc/Desktop/zz_os/target/x86_64-zz_os/debug/zz_os
+cargo:rerun-if-changed=build.rs

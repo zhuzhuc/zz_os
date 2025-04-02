@@ -2,11 +2,14 @@
 name = "zz_os"
 version = "0.1.0"
 authors = ["zz_os"]
+edition = "2021"
 
-# 使用 `cargo build` 编译时需要的配置
+
+[dependencies]
+bootloader = "0.9"
+
 [profile.dev]
-panic = "abort" # 禁用panic时栈展开
+panic = "abort"
 
-# 使用 `cargo build --release` 编译时需要的配置
 [profile.release]
-panic = "abort" # 禁用 panic 时栈展开
+panic = "abort"
