@@ -11,6 +11,7 @@ use vga_buffer::print_something;
 ///  panic 时被调用
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
+    println!("{}", _info);
     loop {}
 }
 
@@ -32,6 +33,13 @@ fn panic(_info: &PanicInfo) -> ! {
 // }
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    print_something();
+    vga_buffer::print_something();
+    //use core::fmt::Write;
+    println!("Welcome to zz_os!");
+    panic!("Some panic message");
+    
+
+    //vga_buffer::WRITER.lock().write_str("Hello again").unwrap();
+    //write!(vga_buffer::WRITER.lock(), ", some numbers: {} {}", 42, 1.337).unwrap();
     loop {}
 }
